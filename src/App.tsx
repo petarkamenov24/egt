@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Layout } from 'antd'
 import UsersList from './components/UsersList'
 import UserPosts from './components/UserPosts'
@@ -20,6 +20,7 @@ function App() {
             <Route path="/" element={<UsersList />} />
             <Route path="/user/:userId/posts" element={<UserPosts />} />
             <Route path="/tasks" element={<Tasks />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Content>
       </Layout>
